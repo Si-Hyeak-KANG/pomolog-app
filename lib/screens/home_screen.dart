@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:pomolog/screens/todo_detail_modal.dart';
 import 'package:pomolog/screens/write_todo_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,10 +10,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffDF4F47),
       body: Padding(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           children: [
-            //const SizedBox(height: 0),
+            const SizedBox(height: 90),
 
             // 'TODO' 타이틀
             const Center(
@@ -97,125 +97,7 @@ class HomeScreen extends StatelessWidget {
                           showModalBottomSheet<void>(
                             context: context,
                             builder: (BuildContext context) {
-                              return Container(
-                                height: 400,
-                                color: Colors.white,
-                                child: Center(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(15.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Padding(
-                                              padding: EdgeInsets.all(5.0),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  Icon(
-                                                    Icons
-                                                        .check_box_outline_blank_rounded,
-                                                    color: Color(0xffDF4F47),
-                                                    size: 30,
-                                                  ),
-                                                  Icon(
-                                                    Icons.edit,
-                                                    color: Color(0xffDF4F47),
-                                                    size: 30,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            const SizedBox(height: 10),
-                                            Container(
-                                              decoration: const BoxDecoration(
-                                                border: Border(
-                                                  bottom: BorderSide(
-                                                    color: Colors.grey,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(height: 20),
-                                            const Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 18.0),
-                                              child: Text(
-                                                "오늘의 할 일!!!",
-                                                style: TextStyle(
-                                                  fontSize: 20,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 40),
-                                        Column(
-                                          children: [
-                                            Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      vertical: 2.0),
-                                              alignment:
-                                                  const FractionalOffset(0, 1),
-                                              child: FractionallySizedBox(
-                                                  child: Image.asset(
-                                                '/Users/james/dev/app/pomolog/assets/icons/tomato.png',
-                                                width: 30,
-                                                height: 30,
-                                                fit: BoxFit.contain,
-                                              )),
-                                            ),
-                                            LinearPercentIndicator(
-                                              padding: EdgeInsets.zero,
-                                              percent: 0,
-                                              lineHeight: 30,
-                                              backgroundColor: Colors.black38,
-                                              progressColor:
-                                                  const Color(0xffDF4F47),
-                                              width: 360,
-                                            ),
-                                            const Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: [
-                                                Text(
-                                                  "(0/5)",
-                                                  style: TextStyle(
-                                                    fontSize: 16,
-                                                  ),
-                                                )
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                        const SizedBox(height: 50),
-                                        ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            minimumSize: const Size(50, 50),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(0),
-                                            ),
-                                            backgroundColor:
-                                                const Color(0xffDF4F47),
-                                            foregroundColor: Colors.white,
-                                          ),
-                                          child: const Text('집중 시작'),
-                                          onPressed: () =>
-                                              Navigator.pop(context),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
+                              return const TodoDetailModal();
                             },
                           );
                         },
@@ -227,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                               size: 30,
                             ),
                             Padding(
-                              padding: EdgeInsets.all(5.0),
+                              padding: EdgeInsets.all(10.0),
                               child: Text(
                                 "오늘의 할 일!",
                                 style: TextStyle(
