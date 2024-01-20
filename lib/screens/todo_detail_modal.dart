@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:pomolog/screens/edit_todo_screen.dart';
 
 class TodoDetailModal extends StatelessWidget {
   const TodoDetailModal({super.key});
@@ -18,30 +19,40 @@ class TodoDetailModal extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.all(5.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.check_box_outline_blank_rounded,
                           color: Color(0xffDF4F47),
                           size: 30,
                         ),
-                        Icon(
-                          Icons.edit,
-                          color: Color(0xffDF4F47),
-                          size: 30,
+                        IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const EditTodoScreen(),
+                                fullscreenDialog: false,
+                              ),
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.edit,
+                            color: Color(0xffDF4F47),
+                            size: 30,
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
                   Container(
                     decoration: const BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
-                          color: Colors.grey,
+                          color: Color(0xff8e8e8e),
                         ),
                       ),
                     ),
