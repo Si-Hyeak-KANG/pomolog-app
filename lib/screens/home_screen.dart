@@ -62,9 +62,10 @@ class HomeScreen extends StatelessWidget {
 
             // 'TODO' 목록
             Expanded(
-              child: ListView.builder(
+              child: ListView.separated(
                 itemCount: 10,
-                itemBuilder: (BuildContext context, int index) {
+                separatorBuilder: (context, index) => const SizedBox(width: 40),
+                itemBuilder: (context, index) {
                   return Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -78,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     height: 80,
-                    margin: const EdgeInsets.symmetric(vertical: 15),
+                    margin: const EdgeInsets.symmetric(vertical: 10),
                     child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: ElevatedButton(

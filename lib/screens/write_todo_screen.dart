@@ -16,7 +16,7 @@ class WriteTodoScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //const SizedBox(height: 50),
+          const SizedBox(height: 20),
           // 할 일 INPUT
           Padding(
             padding: const EdgeInsets.all(30.0),
@@ -60,32 +60,29 @@ class WriteTodoScreen extends StatelessWidget {
             padding: const EdgeInsets.all(5.0),
             child: SizedBox(
               height: 60,
-              child: Expanded(
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(width: 20),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 60,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(120),
-                      ),
-                      child: Center(
-                        child: Text(
-                          '${index + 1}',
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w900,
-                            color: Color(0xffDF4F47),
-                          ),
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                separatorBuilder: (context, index) => const SizedBox(width: 20),
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(120),
+                    ),
+                    child: Center(
+                      child: Text(
+                        '${index + 1}',
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900,
+                          color: Color(0xffDF4F47),
                         ),
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
           ),
@@ -102,11 +99,6 @@ class WriteTodoScreen extends StatelessWidget {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.add,
-                    size: 24,
-                    color: Color(0xffDF4F47),
-                  ),
                   Text(
                     "등록",
                     style: TextStyle(
