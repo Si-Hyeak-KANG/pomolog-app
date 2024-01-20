@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const WriteTodoScreen(),
-                      fullscreenDialog: false,
+                      fullscreenDialog: true,
                     ),
                   );
                 },

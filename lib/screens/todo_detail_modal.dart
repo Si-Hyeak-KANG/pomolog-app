@@ -35,7 +35,7 @@ class TodoDetailModal extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const EditTodoScreen(),
-                                fullscreenDialog: false,
+                                fullscreenDialog: true,
                               ),
                             );
                           },
