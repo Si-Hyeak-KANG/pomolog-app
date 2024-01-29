@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pomolog/screens/edit_todo_screen.dart';
+import 'package:pomolog/screens/timer_screen.dart';
 
 class TodoDetailModal extends StatelessWidget {
   const TodoDetailModal({super.key});
@@ -115,7 +116,13 @@ class TodoDetailModal extends StatelessWidget {
                   foregroundColor: Colors.white,
                 ),
                 child: const Text('집중 시작'),
-                onPressed: () => Navigator.pop(context),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TimerScreen(),
+                    fullscreenDialog: false,
+                  ),
+                ),
               )
             ],
           ),
